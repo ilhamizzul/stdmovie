@@ -17,6 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl521.stdmovie.fragment.NowFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl521.stdmovie.fragment.SoonFragment;
+
 public class MainActivity extends AppCompatActivity {
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("STD Movie");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -122,27 +126,29 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if (position == 1)
+            if (position == 0) {
+                setTheme(R.style.AppTheme);
                 return new NowFragment();
-            else
+            } else if (position == 1) {
+                setTheme(R.style.AppTheme_Green);
+                return new SoonFragment();
+            } else {
                 return PlaceholderFragment.newInstance(position + 1);
+            }
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Now Playing";
                 case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
+                    return "Coming Soon";
             }
             return null;
         }
