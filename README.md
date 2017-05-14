@@ -1,6 +1,7 @@
 ## STD Movie
 * Nama Paket : id.sch.smktelkom_mlg.privateassignment.xirpl521.stdmovie
-* Link File APK : https://
+* Link File APK :
+https://github.com/rehanarroihan/stdmovie/blob/master/additional/id.sch.smktelkom_mlg.privateassignment.xirpl521.stdmovie(release).apk
 
 ## Identitas
 * Nama  : Multazam Arroihan G
@@ -14,21 +15,26 @@
 https://www.themoviedb.org/documentation/api
 
 ## Navigasi
-* Later
+* Tab
 
 ## Library
 * SQLite Dasar
 
 ## Deskripsi
-* Later
+* Aplikasi yang menyediakan data film yang sedang tayang dan film top rated
 
 ## Kelebihan Kekurangan
-* Later
+Kelebihan
+* Bisa menyimpan data film yang diinginkan
+Kekurangan
+* Data terbatas
 
 ## Another Library
-* Butterknife
+* -
 
 ## Screenshot Aplikasi
 <p align="center">
-  Later
+  <img src="https://github.com/rehanarroihan/stdmovie/blob/master/additional/SS1.png" width="350"/>
+  <img src="https://github.com/rehanarroihan/stdmovie/blob/master/additional/SS2.png" width="350"/>
+  <img src="https://github.com/rehanarroihan/stdmovie/blob/master/additional/SS3.png" width="350"/>
 </p>
