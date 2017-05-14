@@ -47,7 +47,7 @@ public class NowFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerViewNow);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new SourceAdapter(this.getActivity(), mList);
         recyclerView.setAdapter(mAdapter);
