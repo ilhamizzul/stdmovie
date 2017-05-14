@@ -2,6 +2,7 @@ package id.sch.smktelkom_mlg.privateassignment.xirpl521.stdmovie;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -18,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static String KEY1 = "id_saved";
     public static String KEY2 = "title";
     public static String KEY3 = "desc";
-    public static String KEY4 = "banner";
+//    public static String KEY4 = "banner";
 
     private String TAG = "~DatabaseHelper";
 
@@ -29,11 +30,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.d(TAG, "Creating table " + TABLE_NAME);
+//        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME
+//                + "(" + KEY1 + " INTEGER PRIMARY KEY,"
+//                + KEY2 + " VARCHAR(70),"
+//                + KEY3 + " VARCHAR(200),"
+//                + KEY4 + " TEXT" + ")";
+
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME
                 + "(" + KEY1 + " INTEGER PRIMARY KEY,"
                 + KEY2 + " VARCHAR(70),"
-                + KEY3 + " VARCHAR(200),"
-                + KEY4 + " TEXT" + ")";
+                + KEY3 + " VARCHAR(200)" + ")";
 
         db.execSQL(CREATE_TABLE);
     }
@@ -46,12 +52,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean saveMovie(String title, String desc, String banner) {
+    public boolean saveMovie(String title, String desc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY2, title);
         contentValues.put(KEY3, desc);
-        contentValues.put(KEY4, banner);
+//        contentValues.put(KEY4, banner);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
@@ -61,5 +67,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Log.d(TAG, "Insert successfull");
             return true;
         }
+    }
+
+    public Cursor getAllMovie() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
     }
 }

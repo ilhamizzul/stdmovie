@@ -35,7 +35,6 @@ public class NowFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class NowFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerViewNow);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdapter = new SourceAdapter(this.getActivity(), mList);
+        mAdapter = new SourceAdapter(getContext(), mList);
         recyclerView.setAdapter(mAdapter);
 
         downloadDataSource();
